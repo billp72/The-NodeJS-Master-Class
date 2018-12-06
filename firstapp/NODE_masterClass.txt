@@ -1,0 +1,29 @@
+server-side, javascript, runtime environment
+It's a c++ application that embeds V8
+
+Node.js presents itself as two applications:
+I. A script processor
+2. A REPL (Read, Eval, Print, Loop)
+
+script processor gets called by
+simply envoking the node
+and aiming the script at the file you
+want to execute
+
+$ node index.js
+passes the script name to node
+so node can open that file and process the code 
+inside
+1) initialize the event loop. the loop process all things 
+it encounters 
+2) async function get envoked but not executed. They're 
+placed in a qeue
+3) once the loop completes everything on it's list
+(including things in the queue) it exits
+the concept of non-blocking and the event loop allows node to
+schedule things for later.
+node creates a TODO list of async events that it will complete 
+at some time in the future (when they complete)
+
+require() //es5
+import //es6 
